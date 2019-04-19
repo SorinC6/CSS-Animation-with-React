@@ -6,6 +6,7 @@ const Button = () => {
     <>
       <p style={{ textAlign: "center" }}>Buttons Component</p>
       <BtnWrapper>Css transition</BtnWrapper>
+      <DivWrapper>Move with Ease</DivWrapper>
     </>
   );
 };
@@ -24,5 +25,26 @@ const BtnWrapper = styled.button`
 
   &:hover {
     background-color: green;
+  }
+`;
+
+const DivWrapper = styled.div`
+  width: 150px;
+  height: 50px;
+  padding: 10px 15px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 15px;
+  line-height: 45px;
+  // responsabile for changing the location of the div
+  transition-property: translate();
+  transition-duration: 3s;
+  transition-timing-function: ease-in-out; //ease , linear ,ease-in , ease-out,ease-in-out
+  &:hover {
+    transform: translate(
+      900px,
+      0
+    ); //it will move 700 px orizontaly and 0 verticaly
   }
 `;
