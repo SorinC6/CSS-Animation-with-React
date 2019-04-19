@@ -10,6 +10,7 @@ const Button = () => {
       <DivWrapper>Move with Ease</DivWrapper>
       <ImgWrapper src={cat} alt="" />
       <ImgWrapper2 src={cat} alt="" />
+      <ImgWrapper3 src={cat} alt="" />
     </Container>
   );
 };
@@ -92,5 +93,17 @@ const ImgWrapper2 = styled.img`
     transform: scaleX(0.5); //decrease */
     /* transform: scaleY(2); */
     transform: scale(2, 2);
+  }
+`;
+
+const ImgWrapper3 = styled.img`
+  margin: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 3px;
+  transition: transform 2s;
+  &:hover {
+    /* transform: rotate(360deg); */
+    transform: rotate(2turn);
   }
 `;
