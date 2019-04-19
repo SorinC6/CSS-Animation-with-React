@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import cat from "../../assets/cat.jpg";
 
 const Button = () => {
   return (
@@ -7,6 +8,7 @@ const Button = () => {
       <p style={{ textAlign: "center" }}>Buttons Component</p>
       <BtnWrapper>Css transition</BtnWrapper>
       <DivWrapper>Move with Ease</DivWrapper>
+      <ImgWrapper src={cat} alt="" />
     </>
   );
 };
@@ -54,5 +56,15 @@ const DivWrapper = styled.div`
       900px,
       0
     ); //it will move 700 px orizontaly and 0 verticaly
+  }
+`;
+
+const ImgWrapper = styled.img`
+  width: 300px;
+  height: auto;
+  border-radius: 3px;
+  transition: transform 2s;
+  &:hover {
+    transform: translate(700px, 100px);
   }
 `;
