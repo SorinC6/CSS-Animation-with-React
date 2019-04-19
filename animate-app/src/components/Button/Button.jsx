@@ -4,18 +4,28 @@ import cat from "../../assets/cat.jpg";
 
 const Button = () => {
   return (
-    <>
+    <Container>
       <p style={{ textAlign: "center" }}>Buttons Component</p>
       <BtnWrapper>Css transition</BtnWrapper>
       <DivWrapper>Move with Ease</DivWrapper>
       <ImgWrapper src={cat} alt="" />
-    </>
+      <ImgWrapper2 src={cat} alt="" />
+    </Container>
   );
 };
 
 export default Button;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+`;
+
 const BtnWrapper = styled.button`
+  margin: 20px;
   height: 90px;
   width: 290px;
   font-size: 28px;
@@ -39,6 +49,7 @@ const BtnWrapper = styled.button`
 `;
 
 const DivWrapper = styled.div`
+  margin: 20px;
   width: 150px;
   height: 50px;
   padding: 10px 15px;
@@ -60,11 +71,26 @@ const DivWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.img`
+  margin: 20px;
   width: 300px;
   height: auto;
   border-radius: 3px;
   transition: transform 2s;
   &:hover {
     transform: translate(700px, 100px);
+  }
+`;
+
+const ImgWrapper2 = styled.img`
+  margin: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 3px;
+  transition: transform 2s;
+  &:hover {
+    /* transform: scaleX(2.9); //increase
+    transform: scaleX(0.5); //decrease */
+    /* transform: scaleY(2); */
+    transform: scale(2, 2);
   }
 `;

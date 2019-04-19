@@ -37,14 +37,23 @@ const NavWrapper = styled.nav`
 `;
 
 const NavLinkWrapper = styled(NavLink)`
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
   text-decoration: none;
   padding: 10px 30px;
   margin: 0 20px;
   background: #e1e8f0;
   border-radius: 5px;
-
+  color: purple;
+  font-size: 15px;
+  transition: background-color 3s, color 2s, font-size 1s,
+    border-radius 3s ease 1s;
   &.active {
     color: black;
     background-color: #6ed3cf;
+    font-size: 20px;
+    border-radius: 50%;
   }
 `;
