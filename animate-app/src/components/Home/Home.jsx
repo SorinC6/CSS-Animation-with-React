@@ -41,8 +41,10 @@ const NavLinkWrapper = styled(NavLink)`
   padding: 10px 30px;
   margin: 0 20px;
   background: #e1e8f0;
+  border-radius: 5px;
 
   &.active {
-    color: red;
+    color: black;
+    background-color: #6ed3cf;
   }
 `;
