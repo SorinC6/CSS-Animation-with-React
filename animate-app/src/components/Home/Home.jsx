@@ -1,16 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const Home = () => {
   return (
     <>
-      <nav>
-        <NavLink to="/" className="normal" activeClassName="active">
-          Buttons
-        </NavLink>
-        <NavLink>Images</NavLink>
-        <NavLink>More</NavLink>
-      </nav>
+      <NavWrapper>
+        <NavLinkWrapper to="/buttons">Buttons</NavLinkWrapper>
+        <NavLinkWrapper to="/images">Images</NavLinkWrapper>
+        <NavLinkWrapper to="/stuff">More</NavLinkWrapper>
+      </NavWrapper>
     </>
   );
 };
@@ -29,3 +28,21 @@ const Home = () => {
  */
 
 export default Home;
+
+const NavWrapper = styled.nav`
+  display: flex;
+  justify-content: space-evenly;
+  padding: 80px 0;
+  background-color: #9068be;
+`;
+
+const NavLinkWrapper = styled(NavLink)`
+  text-decoration: none;
+  padding: 10px 30px;
+  margin: 0 20px;
+  background: #e1e8f0;
+
+  &.active {
+    color: red;
+  }
+`;
