@@ -20,11 +20,19 @@ const BtnWrapper = styled.button`
   color: white;
   border: none;
   background-color: blue;
-  transition-property: background-color;
-  transition-duration: 2s; //we can use millisecond ex: 2000ms is the same
+  /* transition-property: background-color color width; */
+  /* transition-property: all;
+  transition-duration: 3s; //we can use millisecond ex: 2000ms is the same
+  transition-delay:2s
+  */
+  transition: background-color 3s, color 6s, border-radius 2s ease 2s,
+    width 2s ease 1s;
 
   &:hover {
     background-color: green;
+    color: black;
+    width: 500px;
+    border-radius: 50%;
   }
 `;
 
