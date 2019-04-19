@@ -11,6 +11,7 @@ const Button = () => {
       <ImgWrapper src={cat} alt="" />
       <ImgWrapper2 src={cat} alt="" />
       <ImgWrapper3 src={cat} alt="" />
+      <ImgWrapper4 src={cat} alt="" />
     </Container>
   );
 };
@@ -105,5 +106,17 @@ const ImgWrapper3 = styled.img`
   &:hover {
     /* transform: rotate(360deg); */
     transform: rotate(2turn);
+  }
+`;
+
+const ImgWrapper4 = styled.img`
+  margin: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 3px;
+  transition: transform 4s;
+  &:hover {
+    /* transform: skewY(50deg); */
+    transform: skew(180deg, 180deg);
   }
 `;
