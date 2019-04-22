@@ -13,6 +13,7 @@ const Image = () => {
         <ImgWrapper4 src={cat} alt="" />
         <ImgWrapper5 src={cat} alt="" />
         <ImgWrapper6 src={cat} alt="" />
+        <ImgWrapper7 src={cat} alt="" />
       </Container>
     </Wrapper>
   );
@@ -31,7 +32,7 @@ const Container = styled.div`
   max-width: 82%;
   margin: 0 auto;
   background-color: #7fdbff;
-  perspective: 100px;
+  perspective: 500px;
 `;
 
 const ImgWrapper = styled.img`
@@ -105,5 +106,17 @@ const ImgWrapper6 = styled.img`
 
   &:hover {
     transform: translateZ(300px);
+  }
+`;
+
+const ImgWrapper7 = styled.img`
+  margin: 20px;
+  width: 250px;
+  height: auto;
+  border-radius: 3px;
+  transition: transform 1s;
+
+  &:hover {
+    transform: rotatey(180deg);
   }
 `;
