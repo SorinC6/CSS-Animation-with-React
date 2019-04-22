@@ -4,13 +4,13 @@ import styled from "styled-components";
 const Button = () => {
   return (
     <Container>
-      <p style={{ textAlign: "center" }}>Buttons Component</p>
       <BtnWrapper>Css transition</BtnWrapper>
       <DivWrapper>Move with Ease</DivWrapper>
       <BtnWrapper1>Hover Me</BtnWrapper1>
       <BtnWrapper2>Hover Me2</BtnWrapper2>
       <BtnWrapper3>Hover Me3</BtnWrapper3>
       <BtnWrapper4>Hover Me4</BtnWrapper4>
+      <BtnWrapper5>Hover Me5</BtnWrapper5>
     </Container>
   );
 };
@@ -19,7 +19,8 @@ export default Button;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
   max-width: 100%;
   background-color: #ed8a63;
@@ -202,5 +203,43 @@ const BtnWrapper4 = styled.button`
     font-weight: 900;
     letter-spacing: 10px;
     border: 7px solid blueviolet;
+  }
+`;
+
+const BtnWrapper5 = styled.button`
+  margin: 20px;
+  text-decoration: none;
+  color: #351435;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #351435;
+  padding: 40px 80px;
+  position: relative;
+  transition: all 1s;
+  overflow: hidden;
+  z-index: 1;
+
+  &:before {
+    content: "New Stuff";
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #351435;
+    transform: translateY(-100%);
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:hover:before {
+    transform: translateY(0);
+  }
+
+  &:hover {
+    color: white;
   }
 `;
