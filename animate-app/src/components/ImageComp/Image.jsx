@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import cover3 from "../../assets/book3.jpg";
 import cat from "../../assets/cat.jpg";
-import cover from "../../assets/star.jpg";
 import cover2 from "../../assets/logo2.jpg";
+import cover from "../../assets/star.jpg";
 
 const Image = () => {
   return (
@@ -44,6 +45,14 @@ const Image = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </WrapperImage3>
+
+        <WrapperImage4>
+          <img src={cover3} alt="" />
+          <div>
+            <h1>Title over here!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </WrapperImage4>
       </Container>
     </Wrapper>
   );
@@ -206,7 +215,7 @@ const WrapperImage1 = styled.div`
 const WrapperImage2 = styled.div`
   margin: 20px;
   max-width: 300px;
-  height: auto;
+  height: 400px;
   position: relative;
   transition: all 0.7s;
   background: rgba(0, 0, 0, 0);
@@ -285,7 +294,7 @@ const WrapperImage3 = styled.div`
     color: white;
     opacity: 0;
     transition: all 0.6s;
-    transform: translateY(-100%);
+    transform: translateY(100%);
 
     h1 {
       text-transform: uppercase;
@@ -306,5 +315,46 @@ const WrapperImage3 = styled.div`
     opacity: 1;
     background: rgba(0, 0, 0, 0.7);
     transform: translateY(0);
+  }
+`;
+
+const WrapperImage4 = styled.div`
+  margin: 20px;
+  max-width: 300px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  img {
+    width: 100%;
+    transition: all 1s;
+  }
+
+  div {
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    background-color: black;
+    transform: translatex(-100%);
+    p {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  &:hover div {
+    transform: translateX(0);
+  }
+
+  &:hover img {
+    transform: translateX(100%);
   }
 `;
