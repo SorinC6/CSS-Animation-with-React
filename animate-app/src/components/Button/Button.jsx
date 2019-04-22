@@ -9,7 +9,7 @@ const Button = () => {
       <DivWrapper>Move with Ease</DivWrapper>
       <BtnWrapper1>Hover Me</BtnWrapper1>
       <BtnWrapper2>Hover Me2</BtnWrapper2>
-      <BtnWrapper2>Hover Me3</BtnWrapper2>
+      <BtnWrapper3>Hover Me3</BtnWrapper3>
     </Container>
   );
 };
@@ -137,4 +137,52 @@ const BtnWrapper2 = styled.button`
   }
 `;
 
+const BtnWrapper3 = styled.button`
+  padding: 40px 80px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #262626;
+  font-size: 45px;
+  letter-spacing: 2px;
+  border: 5px solid #262626;
+  position: relative;
+  transition: 1s;
+  z-index: 1;
 
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    z-index: -1;
+    transition: 1s;
+    transform: rotateX(90deg);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    z-index: -1;
+    transition: 1s;
+    transform: rotateY(90deg);
+  }
+
+  &:hover:before {
+    transform: rotateX(0deg);
+  }
+
+  &:hover:after {
+    transform: rotateY(0deg);
+  }
+
+  &:hover {
+    color: white;
+  }
+`;
