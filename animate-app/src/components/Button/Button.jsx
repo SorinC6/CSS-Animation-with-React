@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import cat from "../../assets/cat.jpg";
 
 const Button = () => {
   return (
@@ -8,11 +7,6 @@ const Button = () => {
       <p style={{ textAlign: "center" }}>Buttons Component</p>
       <BtnWrapper>Css transition</BtnWrapper>
       <DivWrapper>Move with Ease</DivWrapper>
-      <ImgWrapper src={cat} alt="" />
-      <ImgWrapper2 src={cat} alt="" />
-      <ImgWrapper3 src={cat} alt="" />
-      <ImgWrapper4 src={cat} alt="" />
-      <ImgWrapper5 src={cat} alt="" />
     </Container>
   );
 };
@@ -70,67 +64,5 @@ const DivWrapper = styled.div`
       900px,
       0
     ); //it will move 700 px orizontaly and 0 verticaly
-  }
-`;
-
-const ImgWrapper = styled.img`
-  margin: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 3px;
-  transition: transform 2s;
-  &:hover {
-    transform: translate(700px, 100px);
-  }
-`;
-
-const ImgWrapper2 = styled.img`
-  margin: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 3px;
-  transition: transform 2s;
-  &:hover {
-    /* transform: scaleX(2.9); //increase
-    transform: scaleX(0.5); //decrease */
-    /* transform: scaleY(2); */
-    transform: scale(2, 2);
-  }
-`;
-
-const ImgWrapper3 = styled.img`
-  margin: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 3px;
-  transition: transform 2s;
-  &:hover {
-    /* transform: rotate(360deg); */
-    transform: rotate(2turn);
-  }
-`;
-
-const ImgWrapper4 = styled.img`
-  margin: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 3px;
-  transition: transform 4s;
-  &:hover {
-    /* transform: skewY(50deg); */
-    transform: skew(180deg, 180deg);
-  }
-`;
-
-const ImgWrapper5 = styled.img`
-  margin: 20px;
-  width: 300px;
-  height: auto;
-  border-radius: 3px;
-  transition: transform 1s;
-  transform-origin: top;
-  transform-origin: top left;
-  &:hover {
-    transform: rotate(20deg);
   }
 `;
