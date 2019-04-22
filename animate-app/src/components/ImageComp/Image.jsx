@@ -4,6 +4,7 @@ import cover3 from "../../assets/book3.jpg";
 import cat from "../../assets/cat.jpg";
 import cover2 from "../../assets/logo2.jpg";
 import cover from "../../assets/star.jpg";
+import star from "../../assets/star2.jpg";
 
 const Image = () => {
   return (
@@ -53,6 +54,14 @@ const Image = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </WrapperImage4>
+
+        <WrapperImage5>
+          <img src={star} alt="" />
+          <div>
+            <h1>Title over here!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </WrapperImage5>
       </Container>
     </Wrapper>
   );
@@ -356,5 +365,47 @@ const WrapperImage4 = styled.div`
 
   &:hover img {
     transform: translateX(100%);
+  }
+`;
+
+const WrapperImage5 = styled.div`
+  margin: 20px;
+  max-width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+    height: 400px;
+    transition: transform 1s;
+  }
+
+  div {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    transform: translateY(100%);
+    transition: all 1s;
+    p {
+      max-width: 85%;
+    }
+  }
+
+  &:hover div {
+    transform: translateY(0);
+  }
+  &:hover img {
+    transform: translateY(-30%);
   }
 `;
