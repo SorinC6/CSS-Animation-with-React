@@ -11,6 +11,7 @@ const Button = () => {
       <BtnWrapper3>Hover Me3</BtnWrapper3>
       <BtnWrapper4>Hover Me4</BtnWrapper4>
       <BtnWrapper5>Hover Me5</BtnWrapper5>
+      <BtnWrapper6>Hover Me6</BtnWrapper6>
     </Container>
   );
 };
@@ -241,5 +242,35 @@ const BtnWrapper5 = styled.button`
 
   &:hover {
     color: white;
+  }
+`;
+
+const BtnWrapper6 = styled.button`
+  outline: none;
+  color: black;
+  font-size: 40px;
+  border: 3px solid white;
+  padding: 40px 80px;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background-color: red;
+  }
+
+  &:before {
+    content: "";
+    background-color: lightgrey;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all 0.5s;
+  }
+  &:hover:before {
+    transform: translateX(100%) rotate(45deg);
   }
 `;
