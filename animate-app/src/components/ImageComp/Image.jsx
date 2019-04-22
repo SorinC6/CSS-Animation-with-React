@@ -36,6 +36,14 @@ const Image = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </WrapperImage2>
+
+        <WrapperImage3>
+          <img src={cover2} alt="" />
+          <div>
+            <h1>Title over here!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </WrapperImage3>
       </Container>
     </Wrapper>
   );
@@ -205,7 +213,8 @@ const WrapperImage2 = styled.div`
   overflow: hidden;
 
   img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     transition: all 1s;
   }
   div {
@@ -230,16 +239,72 @@ const WrapperImage2 = styled.div`
       text-transform: uppercase;
     }
     p {
-      margin: 0;
-    }
-
-    &:hover {
-      opacity: 1;
-      background: rgba(0, 0, 0, 0.7);
+      font-size: 18px;
+      text-transform: capitalize;
+      padding: 10px;
     }
   }
 
   &:hover div {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
     transform: translateX(0);
+  }
+  &:hover img {
+    transform: scale(1.2) rotate(-10deg);
+  }
+`;
+
+const WrapperImage3 = styled.div`
+  margin: 20px;
+  max-width: 300px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    transition: all 1s;
+  }
+
+  div {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: all 0.6s;
+    transform: translateY(-100%);
+
+    h1 {
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      text-transform: capitalize;
+      padding: 10px;
+    }
+  }
+  &:hover img {
+    transform: scale(1.3) rotate(15deg);
+  }
+
+  &:hover div {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(0);
   }
 `;
