@@ -10,6 +10,7 @@ const Button = () => {
       <BtnWrapper1>Hover Me</BtnWrapper1>
       <BtnWrapper2>Hover Me2</BtnWrapper2>
       <BtnWrapper3>Hover Me3</BtnWrapper3>
+      <BtnWrapper4>Hover Me4</BtnWrapper4>
     </Container>
   );
 };
@@ -184,5 +185,22 @@ const BtnWrapper3 = styled.button`
 
   &:hover {
     color: white;
+  }
+`;
+const BtnWrapper4 = styled.button`
+  margin: 20px;
+  outline: none;
+  padding: 40px 80px;
+  color: green;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  transition: all 0.5s;
+  border: 3px solid blueviolet;
+  &:hover {
+    font-weight: 900;
+    letter-spacing: 10px;
+    border: 7px solid blueviolet;
   }
 `;
