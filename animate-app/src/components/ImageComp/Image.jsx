@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import cat from "../../assets/cat.jpg";
+import cover from "../../assets/star.jpg";
 
 const Image = () => {
   return (
@@ -14,6 +15,18 @@ const Image = () => {
         <ImgWrapper5 src={cat} alt="" />
         <ImgWrapper6 src={cat} alt="" />
         <ImgWrapper7 src={cat} alt="" />
+        <WrapperImage1>
+          <img src={cover} alt="" />
+          <div>
+            <h1>Title over here!</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quis
+              consequuntur molestias. Consectetur voluptas, voluptatem enim,
+              commodi incidunt sit dolores quos alias molestiae velit corrupti
+              neque ipsum totam dignissimos eum.
+            </p>
+          </div>
+        </WrapperImage1>
       </Container>
     </Wrapper>
   );
@@ -23,6 +36,7 @@ export default Image;
 
 const Wrapper = styled.div`
   background-color: #7fdbff;
+  height: auto;
 `;
 
 const Container = styled.div`
@@ -117,6 +131,57 @@ const ImgWrapper7 = styled.img`
   transition: transform 1s;
 
   &:hover {
-    transform: rotatey(180deg);
+    transform: rotateY(180deg);
+  }
+`;
+
+const WrapperImage1 = styled.div`
+  width: 300px;
+  height: 400px;
+  position: relative;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  background: rgba(0, 0, 0, 0);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+    transition: all 1s;
+  }
+
+  div {
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: all 0.6s;
+    h1 {
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      text-transform: capitalize;
+      padding: 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  &:hover img {
+    transform: scale(1.3) rotate(15deg);
   }
 `;
