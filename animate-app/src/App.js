@@ -6,6 +6,7 @@ import { Route } from "react-router-dom";
 import Button from "./components/Button/Button";
 import Image from "./components/ImageComp/Image";
 import Text from "./components/Text/Text";
+import More from "./components/More/More";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route path="/buttons" component={Button} />
           <Route path="/images" component={Image} />
           <Route path="/text" component={Text} />
+          <Route path="/more" component={More} />
         </div>
       </div>
     );

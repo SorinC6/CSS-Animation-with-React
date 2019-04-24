@@ -9,7 +9,7 @@ const Home = () => {
         <NavLinkWrapper to="/buttons">Buttons</NavLinkWrapper>
         <NavLinkWrapper to="/images">Images</NavLinkWrapper>
         <NavLinkWrapper to="/text">Text</NavLinkWrapper>
-        <NavLinkWrapper to="/stuff">More</NavLinkWrapper>
+        <NavLinkWrapper to="/more">More</NavLinkWrapper>
       </NavWrapper>
     </>
   );

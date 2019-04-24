@@ -11,6 +11,16 @@ const Text = () => {
         <li>I</li>
         <li>N</li>
       </ul>
+
+      <MenuWrapper>
+        <nav>
+          <a href="">Home</a>
+          <a href="">About</a>
+          <a href="">Service</a>
+          <a href="">Portofolio</a>
+          <a href="">Contact</a>
+        </nav>
+      </MenuWrapper>
     </Container>
   );
 };
@@ -57,5 +67,45 @@ const Container = styled.div`
     transform: rotate(45deg) translateY(-200px);
     opacity: 0;
     filter: blur(20px);
+  }
+`;
+
+const MenuWrapper = styled.div`
+  margin: 70px 20px;
+  padding: 10px;
+
+  nav {
+    max-width: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    font-size: 32px;
+  }
+
+  a {
+    text-decoration: none;
+    color: darkolivegreen;
+    padding: 10px;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: red;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
   }
 `;
