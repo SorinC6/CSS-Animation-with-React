@@ -5,19 +5,13 @@ import cat from "../../assets/cat.jpg";
 import cover2 from "../../assets/logo2.jpg";
 import cover from "../../assets/star.jpg";
 import star from "../../assets/star2.jpg";
+import test from "../../assets/test.jpg";
 
 const Image = () => {
   return (
     <Wrapper>
       {/* <p style={{ textAlign: "center" }}>Images Component</p> */}
       <Container>
-        <ImgWrapper src={cat} alt="" />
-        <ImgWrapper2 src={cat} alt="" />
-        <ImgWrapper3 src={cat} alt="" />
-        <ImgWrapper4 src={cat} alt="" />
-        <ImgWrapper5 src={cat} alt="" />
-        <ImgWrapper6 src={cat} alt="" />
-        <ImgWrapper7 src={cat} alt="" />
         <WrapperImage1>
           <img src={cover} alt="" />
           <div>
@@ -62,6 +56,18 @@ const Image = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
         </WrapperImage5>
+
+        <WrapperImage6>
+          <img src={test} alt="" />
+        </WrapperImage6>
+
+        <ImgWrapper src={cat} alt="" />
+        <ImgWrapper2 src={cat} alt="" />
+        <ImgWrapper3 src={cat} alt="" />
+        <ImgWrapper4 src={cat} alt="" />
+        <ImgWrapper5 src={cat} alt="" />
+        <ImgWrapper6 src={cat} alt="" />
+        <ImgWrapper7 src={cat} alt="" />
       </Container>
     </Wrapper>
   );
@@ -407,5 +413,23 @@ const WrapperImage5 = styled.div`
   }
   &:hover img {
     transform: translateY(-30%);
+  }
+`;
+
+const WrapperImage6 = styled.div`
+  margin: 20px;
+  max-width: 300px;
+  height: 400px;
+  border: 5px solid white;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+  }
+
+  &:hover img {
+    transform: scale(1.2) rotate(9deg);
   }
 `;
