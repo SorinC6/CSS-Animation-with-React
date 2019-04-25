@@ -6,6 +6,7 @@ const More = () => {
     <Container>
       <p>More</p>
       <DivWrapper />
+      <DivWrapper2 />
     </Container>
   );
 };
@@ -38,6 +39,24 @@ const DivWrapper = styled.div`
     }
     100% {
       transform: translateY(-100px);
+    }
+  }
+`;
+
+const DivWrapper2 = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: moving2;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  @keyframes moving2 {
+    0% {
+      transform: translateX(-1000px);
+    }
+    100% {
+      transform: translateX(500px);
     }
   }
 `;
