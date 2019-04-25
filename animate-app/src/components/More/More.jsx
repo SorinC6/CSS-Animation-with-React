@@ -47,10 +47,16 @@ const DivWrapper2 = styled.div`
   width: 100px;
   height: 100px;
   background-color: blue;
-  animation-name: moving2;
+  /* animation-name: moving2;
   animation-duration: 4s;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
+  /* we can add animation-iteration-count for repeting the animation */
+  /*if we want to infinite repete we can add inifinite */
+   /* ease-in ease-out */
+  /* animation-timing-function: ease;
   animation-delay: 1s;
+  animation-direction: normal; */
+  animation: moving2 3s both infinite ease alternate 1s;
   @keyframes moving2 {
     0% {
       transform: translateX(-1000px);
