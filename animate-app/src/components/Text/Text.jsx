@@ -80,32 +80,43 @@ const MenuWrapper = styled.div`
     justify-content: space-evenly;
     margin: 0 auto;
     font-size: 32px;
-  }
 
-  a {
-    text-decoration: none;
-    color: darkolivegreen;
-    padding: 10px;
-    position: relative;
-
-    &:before {
-      content: "";
+    a {
+      text-decoration: none;
+      color: darkolivegreen;
+      padding: 10px;
       position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: red;
-    }
-  }
 
-  &:before {
-    content: "";
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: red;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3%;
+        background-color: red;
+        transform: scaleX(0);
+        transition: all 0.5s;
+        transform-origin: left;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3%;
+        background-color: red;
+        transform: scaleX(0);
+        transition: all 0.5s;
+        transform-origin: right;
+      }
+      &:hover:before {
+        transform: scaleX(1);
+      }
+      &:hover:after {
+        transform: scaleX(1);
+      }
+    }
   }
 `;
