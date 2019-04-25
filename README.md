@@ -1,2 +1,2 @@
 # CSS-Animation-with-React
-Experimenting with Css animation
+Experimenting with css animation ans styled components 
