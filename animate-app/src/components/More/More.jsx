@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Bg from "../../assets/bg.jpg";
+import bike from "../../assets/motobike.png";
+import car from "../../assets/car.png";
 
 const More = () => {
   return (
@@ -8,6 +11,10 @@ const More = () => {
       <DivWrapper />
       <DivWrapper2 />
       <CardLoad>Bang!</CardLoad>
+      <Driving>
+        <img src={bike} alt="" />
+        <img src={car} alt="" />
+      </Driving>
     </Container>
   );
 };
@@ -27,6 +34,7 @@ const Container = styled.div`
 `;
 
 const DivWrapper = styled.div`
+  margin: 20px;
   width: 100px;
   height: 100px;
   background-color: blue;
@@ -82,6 +90,7 @@ const CardLoad = styled.div`
   font-weight: bold;
   letter-spacing: 3px;
   animation: loading 2s linear infinite alternate;
+
   @keyframes loading {
     0% {
       transform: rotateX(0deg) rotateY(0deg);
@@ -92,5 +101,35 @@ const CardLoad = styled.div`
     100% {
       transform: rotateX(180deg) rotateY(180deg);
     }
+  }
+`;
+
+const Driving = styled.div`
+  margin: 20px;
+  height: 100vh;
+  width: 80%;
+  background: url(${Bg});
+  animation: drive 18s linear infinite;
+  position: relative;
+
+  @keyframes drive {
+    from {
+      background-position: bottom left;
+    }
+    to {
+      background-position: bottom right;
+    }
+  }
+  img:nth-child(1) {
+    position: absolute;
+    left: 300px;
+    bottom: -10px;
+    width: 200px;
+  }
+  img:nth-child(2) {
+    position: absolute;
+    left: 800px;
+    bottom: -10px;
+    width: 200px;
   }
 `;
