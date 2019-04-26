@@ -14,13 +14,19 @@ const Text = () => {
 
       <MenuWrapper>
         <nav>
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Service</a>
-          <a href="">Portofolio</a>
-          <a href="">Contact</a>
+          <a href="#t">Home</a>
+          <a href="#t">About</a>
+          <a href="#t">Service</a>
+          <a href="#t">Portofolio</a>
+          <a href="#t">Contact</a>
         </nav>
       </MenuWrapper>
+
+      <TextWrapper>
+        <h2>
+          CHIS SORIN <br /> Full Stack Developer
+        </h2>
+      </TextWrapper>
     </Container>
   );
 };
@@ -61,12 +67,11 @@ const Container = styled.div`
         transition-delay: 1.6s;
       }
     }
-  }
-
-  &:hover li {
-    transform: rotate(45deg) translateY(-200px);
-    opacity: 0;
-    filter: blur(20px);
+    &:hover li {
+      transform: rotate(45deg) translateY(-200px);
+      opacity: 0;
+      filter: blur(20px);
+    }
   }
 `;
 
@@ -117,6 +122,29 @@ const MenuWrapper = styled.div`
       &:hover:after {
         transform: scaleX(1);
       }
+    }
+  }
+`;
+
+const TextWrapper = styled.div`
+  h2 {
+    text-align: center;
+    color: purple;
+    font-family: arial;
+    font-size: 90px;
+    letter-spacing: 15px;
+    text-shadow: 0 1px 0 #efefef, 0 2px 0 #efefef, 0 3px 0 #efefef,
+      0 4px 0 #efefef, 0 30px 5px rgba(0, 0, 0, 0.1);
+    animation: float 2s linear infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes float {
+    from {
+      transform: rotate(5deg);
+    }
+    to {
+      transform: rotate(-5deg);
     }
   }
 `;
