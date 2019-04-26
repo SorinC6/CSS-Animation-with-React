@@ -7,6 +7,7 @@ const More = () => {
       <p>More</p>
       <DivWrapper />
       <DivWrapper2 />
+      <CardLoad>Bang!</CardLoad>
     </Container>
   );
 };
@@ -22,6 +23,7 @@ const Container = styled.div`
   max-width: 100%;
   background-color: #ed8a63;
   margin: 0 auto;
+  perspective: 200px;
 `;
 
 const DivWrapper = styled.div`
@@ -52,7 +54,7 @@ const DivWrapper2 = styled.div`
   animation-fill-mode: both; */
   /* we can add animation-iteration-count for repeting the animation */
   /*if we want to infinite repete we can add inifinite */
-   /* ease-in ease-out */
+  /* ease-in ease-out */
   /* animation-timing-function: ease;
   animation-delay: 1s;
   animation-direction: normal; */
@@ -63,6 +65,32 @@ const DivWrapper2 = styled.div`
     }
     100% {
       transform: translateX(500px);
+    }
+  }
+`;
+
+const CardLoad = styled.div`
+  margin: 20px;
+  width: 100px;
+  height: 100px;
+  background-color: lightyellow;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  animation: loading 2s linear infinite alternate;
+  @keyframes loading {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+      transform: rotateX(0deg) rotateY(180deg);
+    }
+    100% {
+      transform: rotateX(180deg) rotateY(180deg);
     }
   }
 `;
