@@ -27,6 +27,9 @@ const Text = () => {
           CHIS SORIN <br /> Full Stack Developer
         </h2>
       </TextWrapper>
+      <TextWrapper1>
+        I Love Css <span />
+      </TextWrapper1>
     </Container>
   );
 };
@@ -145,6 +148,31 @@ const TextWrapper = styled.div`
     }
     to {
       transform: rotate(-5deg);
+    }
+  }
+`;
+
+const TextWrapper1 = styled.h1`
+  text-align: center;
+  font-size: 60px;
+
+  span:before {
+    content: "TRANSITION";
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslateblue;
+    animation: words 6s infinite;
+  }
+
+  @keyframes words {
+    0% {
+      content: "transition";
+    }
+    50% {
+      content: "animation";
+    }
+    100% {
+      content: "transforms";
     }
   }
 `;
