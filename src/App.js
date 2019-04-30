@@ -14,8 +14,8 @@ class App extends Component {
       <div className="main-container">
         <Home />
         <div>
-          <Route path="/" component={Button} />
-          <Route path="/images" component={Image} />
+          <Route path="/buttons" component={Button} />
+          <Route exact path="/" component={Image} />
           <Route path="/text" component={Text} />
           <Route path="/more" component={More} />
         </div>
