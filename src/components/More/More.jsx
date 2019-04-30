@@ -18,6 +18,16 @@ const More = () => {
       </Driving>
       <BackgroundImage />
       <Heart />
+      <Bounce>
+        <ul>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+        </ul>
+      </Bounce>
     </Container>
   );
 };
@@ -205,6 +215,55 @@ const Heart = styled.div`
     }
     100% {
       transform: rotate(45deg) scale(1);
+    }
+  }
+`;
+
+const Bounce = styled.div`
+  margin: 20px;
+  margin-top: 220px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-bottom: 10px solid white;
+    li {
+      list-style: none;
+      width: 30px;
+      height: 30px;
+      background: white;
+      margin: 0 10px;
+      border-radius: 50%;
+      animation: jumping 0.8s linear infinite;
+
+      :nth-child(1) {
+        animation-delay: 0.45s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      :nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      :nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      :nth-child(5) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  @keyframes jumping {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
 `;
