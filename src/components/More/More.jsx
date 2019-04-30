@@ -4,6 +4,8 @@ import Bg from "../../assets/bg.jpg";
 import Bg1 from "../../assets/bg1.png";
 import bike from "../../assets/motobike.png";
 import car from "../../assets/car.png";
+import rain from "../../assets/rain.png";
+import brr from "../../assets/bgg.jpg";
 
 const More = () => {
   return (
@@ -28,6 +30,10 @@ const More = () => {
           <li />
         </ul>
       </Bounce>
+
+      <Rain>
+        <div />
+      </Rain>
     </Container>
   );
 };
@@ -264,6 +270,29 @@ const Bounce = styled.div`
     }
     100% {
       transform: translateY(0);
+    }
+  }
+`;
+
+const Rain = styled.div`
+  margin: 20px;
+  height: 100vh;
+  width: 80%;
+  background: url(${brr});
+  background-size: cover;
+
+  div {
+    height: 100%;
+    background: url(${rain});
+    animation: rain 0.3s linear infinite;
+  }
+
+  @keyframes rain {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 20% 100%;
     }
   }
 `;
