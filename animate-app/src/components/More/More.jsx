@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Bg from "../../assets/bg.jpg";
+import Bg1 from "../../assets/bg1.png";
 import bike from "../../assets/motobike.png";
 import car from "../../assets/car.png";
 
@@ -15,6 +16,7 @@ const More = () => {
         <img src={bike} alt="" />
         <img src={car} alt="" />
       </Driving>
+      <BackgroundImage />
     </Container>
   );
 };
@@ -30,7 +32,7 @@ const Container = styled.div`
   max-width: 100%;
   background-color: #ed8a63;
   margin: 0 auto;
-  perspective: 200px;
+  perspective: 500px;
 `;
 
 const DivWrapper = styled.div`
@@ -131,5 +133,22 @@ const Driving = styled.div`
     left: 800px;
     bottom: -10px;
     width: 200px;
+  }
+`;
+
+const BackgroundImage = styled.div`
+  margin: 20px;
+  height: 100vh;
+  width: 80%;
+  background: url(${Bg1});
+  animation: animate-pattern 10s linear infinite;
+
+  @keyframes animate-pattern {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 800px 0;
+    }
   }
 `;
