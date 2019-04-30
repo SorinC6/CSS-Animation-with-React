@@ -17,6 +17,7 @@ const More = () => {
         <img src={car} alt="" />
       </Driving>
       <BackgroundImage />
+      <Heart />
     </Container>
   );
 };
@@ -149,6 +150,61 @@ const BackgroundImage = styled.div`
     }
     to {
       background-position: 800px 0;
+    }
+  }
+`;
+
+const Heart = styled.div`
+  margin: 50px;
+  padding: 30px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: red;
+  transform: rotate(45deg);
+  animation: heartBeat 1.2s linear infinite;
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  @keyframes heartBeat {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    25% {
+      transform: rotate(45deg) scale(1);
+    }
+    30% {
+      transform: rotate(45deg) scale(1.5);
+    }
+    50% {
+      transform: rotate(45deg) scale(1.2);
+    }
+    70% {
+      transform: rotate(45deg) scale(1.4);
+    }
+    100% {
+      transform: rotate(45deg) scale(1);
     }
   }
 `;
