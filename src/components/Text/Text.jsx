@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import im from "../../assets/image.jpg";
 
 const Text = () => {
   return (
@@ -43,6 +44,7 @@ const Text = () => {
           <li>A</li>
         </ul>
       </TextWrap>
+      <TextWrap2>Css animation</TextWrap2>
     </Container>
   );
 };
@@ -245,6 +247,25 @@ const TextWrap = styled.div`
     100% {
       color: yellow;
       text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+  }
+`;
+
+const TextWrap2 = styled.h1`
+  margin: 20px;
+  font-size: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  background: url(${im});
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textmoving 20s linear;
+  @keyframes textmoving {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 100%;
     }
   }
 `;
