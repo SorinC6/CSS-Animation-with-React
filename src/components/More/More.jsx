@@ -4,6 +4,8 @@ import Bg from "../../assets/bg.jpg";
 import Bg1 from "../../assets/bg1.png";
 import bike from "../../assets/motobike.png";
 import car from "../../assets/car.png";
+import rain from "../../assets/rain.png";
+import brr from "../../assets/bgg.jpg";
 
 const More = () => {
   return (
@@ -17,6 +19,21 @@ const More = () => {
         <img src={car} alt="" />
       </Driving>
       <BackgroundImage />
+      <Heart />
+      <Bounce>
+        <ul>
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+          <li />
+        </ul>
+      </Bounce>
+
+      <Rain>
+        <div />
+      </Rain>
     </Container>
   );
 };
@@ -149,6 +166,133 @@ const BackgroundImage = styled.div`
     }
     to {
       background-position: 800px 0;
+    }
+  }
+`;
+
+const Heart = styled.div`
+  margin: 50px;
+  padding: 30px;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: red;
+  transform: rotate(45deg);
+  animation: heartBeat 1.2s linear infinite;
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    transform: translateY(-50%);
+    border-radius: 50%;
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: red;
+    transform: translateX(-50%);
+    border-radius: 50%;
+  }
+
+  @keyframes heartBeat {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    25% {
+      transform: rotate(45deg) scale(1);
+    }
+    30% {
+      transform: rotate(45deg) scale(1.5);
+    }
+    50% {
+      transform: rotate(45deg) scale(1.2);
+    }
+    70% {
+      transform: rotate(45deg) scale(1.4);
+    }
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }
+`;
+
+const Bounce = styled.div`
+  margin: 20px;
+  margin-top: 220px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    border-bottom: 10px solid white;
+    li {
+      list-style: none;
+      width: 30px;
+      height: 30px;
+      background: white;
+      margin: 0 10px;
+      border-radius: 50%;
+      animation: jumping 0.8s linear infinite;
+
+      :nth-child(1) {
+        animation-delay: 0.45s;
+      }
+      :nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      :nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      :nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      :nth-child(5) {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  @keyframes jumping {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-150px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+`;
+
+const Rain = styled.div`
+  margin: 20px;
+  height: 100vh;
+  width: 80%;
+  background: url(${brr});
+  background-size: cover;
+
+  div {
+    height: 100%;
+    background: url(${rain});
+    animation: rain 0.3s linear infinite;
+  }
+
+  @keyframes rain {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 20% 100%;
     }
   }
 `;

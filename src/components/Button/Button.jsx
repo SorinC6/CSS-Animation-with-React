@@ -15,6 +15,7 @@ const Button = () => {
       <BtnWrapper7>Hover Me7</BtnWrapper7>
       <BtnWrapper8>Hover Me8</BtnWrapper8>
       <BtnWrapper9>Hover Me9</BtnWrapper9>
+      <BtnWrapper10>Hover Me10</BtnWrapper10>
     </Container>
   );
 };
@@ -385,6 +386,48 @@ const BtnWrapper9 = styled.a`
     }
     100% {
       transform: rotate(10deg);
+    }
+  }
+`;
+
+const BtnWrapper10 = styled.a`
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid white;
+  padding: 40px 80px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 100%;
+    z-index: -1;
+    transform: skew(-15deg);
+    animation: moving 1.2s linear infinite;
+    transition: all 0.5s;
+  }
+
+  &:hover:before {
+    width: 100%;
+    transform: skew(0deg);
+    animation: none;
+    background: purple;
+  }
+
+  @keyframes moving {
+    from {
+      left: -120px;
+    }
+    to {
+      left: 100%;
     }
   }
 `;

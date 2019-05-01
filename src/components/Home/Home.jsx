@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <NavWrapper>
         <NavLinkWrapper to="/buttons">Buttons</NavLinkWrapper>
-        <NavLinkWrapper to="/">Images</NavLinkWrapper>
+        <NavLinkWrapper exact to="/">Images</NavLinkWrapper>
         <NavLinkWrapper to="/text">Text</NavLinkWrapper>
         <NavLinkWrapper to="/more">More</NavLinkWrapper>
       </NavWrapper>

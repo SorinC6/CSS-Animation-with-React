@@ -1,16 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import im from "../../assets/image.jpg";
 
 const Text = () => {
   return (
     <Container>
-      <ul>
-        <li>S</li>
-        <li>O</li>
-        <li>R</li>
-        <li>I</li>
-        <li>N</li>
-      </ul>
+      <TextWrapTest>
+        <ul>
+          <li>S</li>
+          <li>O</li>
+          <li>R</li>
+          <li>I</li>
+          <li>N</li>
+        </ul>
+      </TextWrapTest>
 
       <MenuWrapper>
         <nav>
@@ -30,6 +33,18 @@ const Text = () => {
       <TextWrapper1>
         I Love Css <span />
       </TextWrapper1>
+
+      <TextWrap>
+        <ul>
+          <li>L</li>
+          <li>A</li>
+          <li>M</li>
+          <li>B</li>
+          <li>D</li>
+          <li>A</li>
+        </ul>
+      </TextWrap>
+      <TextWrap2>Css animation</TextWrap2>
     </Container>
   );
 };
@@ -38,8 +53,12 @@ export default Text;
 
 const Container = styled.div`
   background-color: darkkhaki;
-  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
+const TextWrapTest = styled.div`
   ul {
     margin: 0;
     padding: 0;
@@ -173,6 +192,80 @@ const TextWrapper1 = styled.h1`
     }
     100% {
       content: "transforms";
+    }
+  }
+`;
+
+const TextWrap = styled.div`
+  ul {
+    display: flex;
+
+    li {
+      list-style: none;
+      color: lightgrey;
+      font-size: 80px;
+      letter-spacing: 15px;
+      animation: lighting 2s linear infinite;
+
+      &:nth-child(1) {
+        animation-delay: 0;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+
+      &:nth-child(8) {
+        animation-delay: 0.7s;
+      }
+      &:nth-child(9) {
+        animation-delay: 0.8s;
+      }
+    }
+  }
+
+  @keyframes lighting {
+    0% {
+      color: grey;
+      text-shadow: none;
+    }
+    90% {
+      color: grey;
+      text-shadow: none;
+    }
+    100% {
+      color: yellow;
+      text-shadow: 0 0 7px #fff900, 0 0 50px #ff6c00;
+    }
+  }
+`;
+
+const TextWrap2 = styled.h1`
+  margin: 20px;
+  font-size: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  background: url(${im});
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textmoving 20s linear;
+  @keyframes textmoving {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 100% 100%;
     }
   }
 `;
